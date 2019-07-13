@@ -72,6 +72,7 @@ $(document).ready(function() {
 	$(".top-menu").toggleClass("top-animate");
 	$(".mid-menu").toggleClass("mid-animate");
 	$(".bottom-menu").toggleClass("bottom-animate");
+  
 	});
 
 
@@ -114,7 +115,8 @@ $(document).ready(function() {
 //SCROLL REVEAL
 				
 				window.sr = ScrollReveal();
-                sr.reveal('#logos .logo-single img');
+        
+        sr.reveal('#logos .logo-single img');
 				sr.reveal('h3');
 				sr.reveal('h4');
 				sr.reveal('h5');
@@ -129,13 +131,13 @@ $(document).ready(function() {
 
 // MARKETO FORM HOMEPAGE
 
-                $('#reg-form').ready(function() { /* code here */  /*alert ("form ready");*/ loadScripts(); });
+$('#reg-form').ready(function() { /* code here  alert ("form ready"); */ loadScripts(); });
 
                 
-                function loadScripts(){
+  function loadScripts(){
    
-                       // config section - customize for your org
-                      var config = {
+      // config section - customize for your org
+       var config = {
                         instanceHost: "//app-ab35.marketo.com",
                         munchkinId: "763-KXV-605",
                         formidStack: [1026, 1028],
@@ -230,10 +232,10 @@ $(document).ready(function() {
                                 $('.main-step').hide();
                                 $('.second-step').show();
 
-                                $(".mktoButton").html("Sign Up For Free");
+                               
 
                               }
-                              $(".mktoButton").html("Sign Up For Free");                              
+                                                      
                                 
 
                             });

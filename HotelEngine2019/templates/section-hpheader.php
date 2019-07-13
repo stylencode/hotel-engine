@@ -20,21 +20,11 @@
                   <b><div class="count" id="new-user-count">---</div></b> <?php the_field('text_after_dynamic_number', '4'); ?>
                 </div>
 
-				<!-- EMBEDDED FORM - NEEDS FORMATTING AND STYLING -->
-					<?php get_template_part('section', 'hpform'); ?>
+				
+                <!-- EMBEDDED FORM - NEEDS FORMATTING AND STYLING -->
+				<?php get_template_part('templates/section', 'hpform'); ?>
 
 
-				<!-- END EMBEDDED FORM -->
-                <form id="member-register__register">
-                  <div class="form-group">
-					 
-                    <!--<input type="email" name="email" placeholder="Enter your work email" />
-                    <button type="submit" class="btn">Sign Up For Free</button>-->
-
-
-
-                  </div>
-                </form>
 				<?php if(get_field('login_link','4')){ ?>
 					<p>
 					  Already a member?<br class="mobile-show" /> <a class="btn btn--inline mr-1 ml-1" href="<?php the_field('signup_link', '4'); ?>" target="_blank">Log In Here</a>
