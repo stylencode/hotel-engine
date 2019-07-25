@@ -101,14 +101,14 @@
 	<a class="intercom mobile-hide" href="#">
 		<img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-intercom.svg" alt="Intercom" />
 	</a>
-	<!-- PreLoader -->
+	<!-- PreLoader 
 	<div id="preloader">
 	  <div id="status">
 		<div class="loader-wrap vertalign">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/he-logo-animated-01a.gif" alt="Hotel Engine" />
 		</div>
 		</div>
-	</div>
+	</div>-->
 <?php } ?>
 	<!-- HEADER and NAV -->
     <header class="container-fluid">

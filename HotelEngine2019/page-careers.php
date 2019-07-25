@@ -1,3 +1,7 @@
+<?php
+/**
+ * Template Name: Careers
+**/?>
 <?php get_header(); ?>
 
 	
@@ -5,7 +9,7 @@
 	<?php get_template_part('templates/base', 'hero'); ?>
 
 	
-	<?php get_template_part('templates/base', 'large-image'); ?>
+	<?php get_template_part('templates/base', 'large-video'); ?>
 
 
 	<?php get_template_part('templates/section', 'ceo'); ?>
@@ -21,9 +25,6 @@
 
 
 	<?php get_template_part('templates/section', 'join'); ?>
-
-	<!-- SIGNUP -->
-	<?php get_template_part('templates/section', 'signup'); ?>
 	
 
 <?php get_footer(); ?>

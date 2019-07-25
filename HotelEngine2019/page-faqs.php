@@ -1,3 +1,7 @@
+<?php
+/**
+ * Template Name: FAQ
+**/?>
 <?php get_header(); ?>
 
 	
@@ -6,6 +10,9 @@
 
 
 
+
+
+	
 
 	<!-- SIGNUP -->
 	<?php get_template_part('templates/section', 'signup'); ?>

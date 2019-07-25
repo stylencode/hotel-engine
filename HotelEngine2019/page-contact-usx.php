@@ -15,12 +15,12 @@
 	<?php get_template_part('templates/section', 'account-create'); ?>
 
 
-	<!-- account support -->
-	<?php get_template_part('templates/section', 'account-support'); ?>
-
-
 	<!-- book for more than 9 -->
 	<?php get_template_part('templates/section', 'account-book-extra'); ?>
+
+
+	<!-- account support -->
+	<?php get_template_part('templates/section', 'account-support'); ?>
 
 
 	<!-- load additional resources -->
@@ -29,6 +29,10 @@
 
 	<!-- load HQ information -->
 	<?php get_template_part('templates/section', 'hq'); ?>
+
+
+	<!-- map -->
+	<?php get_template_part('templates/base', 'map'); ?>
 	
 
 <?php get_footer(); ?>

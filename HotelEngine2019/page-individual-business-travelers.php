@@ -1,3 +1,7 @@
+<?php
+/**
+ * Template Name: Individual Business Traveler
+**/?>
 <?php get_header(); ?>
 
 	

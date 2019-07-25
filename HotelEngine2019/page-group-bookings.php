@@ -1,3 +1,7 @@
+<?php
+/**
+ * Template Name: Group Travel
+**/?>
 <?php get_header(); ?>
 
 	

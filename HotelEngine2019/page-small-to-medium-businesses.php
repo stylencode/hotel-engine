@@ -1,3 +1,7 @@
+<?php
+/**
+ * Template Name: Small To Medium Business
+**/?>
 <?php get_header(); ?>
 
 	

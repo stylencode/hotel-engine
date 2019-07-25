@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Hotel Partners
+ * Template Name: Group Bookings
 **/?>
 <?php get_header(); ?>
 
@@ -8,22 +8,20 @@
 	<!-- HERO -->
 	<?php get_template_part('templates/base', 'hero'); ?>
 
-	
-	<?php get_template_part('templates/base', '2col'); ?>
+	<!--  -->
+	<?php get_template_part('templates/base', '3col'); ?>
 
 
-	<?php get_template_part('templates/base', 'testimonials'); ?>
+	<?php get_template_part('templates/base', '3col-image'); ?>
 
 
-	
-
-	<!-- SIGNUP -->
 	<?php get_template_part('templates/section', 'moform'); ?>
 
-	<style>
+  
+  	<style>
 	
 	/* SIGNUP SECTION */
-
+	/* add a signup-form class to a black container. Make sure there is a 40px on the outer container. */
 		.signup-form > .row:before 
 				{
 					  content: '';
@@ -39,4 +37,5 @@
 	</style>
 
 
+	
 <?php get_footer(); ?>

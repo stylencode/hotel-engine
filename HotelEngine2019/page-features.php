@@ -1,3 +1,7 @@
+<?php
+/**
+ * Template Name: Features
+**/?>
 <?php get_header(); ?>
 
 	
@@ -8,7 +12,7 @@
 	<?php get_template_part('templates/base', 'large-image'); ?>
 
 	
-	<?php get_template_part('templates/base', '2colflex'); ?>
+	<?php get_template_part('templates/base', '2col'); ?>
 
 
 	<?php get_template_part('templates/base', 'feature-tag'); ?>

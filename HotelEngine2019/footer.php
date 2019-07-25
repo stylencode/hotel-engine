@@ -21,12 +21,12 @@
 				<?php } ?>
 				<?php if(get_field('google_play_link', '4')){ ?>
 					<a href="<?php the_field('google_play_link', '4'); ?>" target="_blank">
-						<img class="app" src="<?php echo get_stylesheet_directory_uri();?>/images/icon-google-play.svg" alt="Get it on Google Play" />
+						<img class="app" src="<?php the_field('google_play_img', '4'); ?>" alt="Get it on Google Play" />
 					</a>
 				<?php } ?>
 				<?php if(get_field('app_store_link', '4')){ ?>
 					<a href="<?php the_field('app_store_link', '4'); ?>" target="_blank">
-						<img class="app" src="<?php echo get_stylesheet_directory_uri();?>/images/icon-apple.svg" alt="Download on the App Store" />
+						<img class="app" src="<?php the_field('app_store_img', '4'); ?>" alt="Download on the App Store" />
 					</a>
 				<?php } ?>
 			</div>
@@ -92,12 +92,12 @@
 				<?php } ?>
 				<?php if(get_field('google_play_link', '4')){ ?>
 					<a href="<?php the_field('google_play_link', '4'); ?>" target="_blank">
-						<img class="app" src="<?php echo get_stylesheet_directory_uri();?>/images/icon-google-play.svg" alt="Get it on Google Play" />
+						<img class="app" src="<?php the_field('google_play_img', '4'); ?>" alt="Get it on Google Play" />
 					</a>
 				<?php } ?>
 				<?php if(get_field('app_store_link', '4')){ ?>
 					<a href="<?php the_field('app_store_link', '4'); ?>" target="_blank">
-						<img class="app" src="<?php echo get_stylesheet_directory_uri();?>/images/icon-apple.svg" alt="Download on the App Store" />
+						<img class="app" src="<?php the_field('app_store_img', '4'); ?>" alt="Download on the App Store" />
 					</a>
 				<?php } ?>
 			</div>
@@ -105,8 +105,13 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="waybottom-wrap">
-						<p>Hotelengine.com &copy; <?php echo(date('Y')); ?> <br class="xs-show" /><?php if(get_field('terms_link', '4')){ ?><a href="<?php the_field('terms_link', '4'); ?>">Terms of Service</a><?php } ?> <?php if(get_field('privacy_link', '4')){ ?><a href="<?php the_field('privacy_link', '4'); ?>">Privacy Policy</a><?php } ?></p>
+						<p>&copy; <?php echo(date('Y')); ?> <?php the_field('footer_txt', '4'); ?> <img src="<?php the_field('footer_text_image', '4'); ?>" alt="<?php the_field('footer_txt', '4'); ?>" /> <br class="xs-show" /><?php if(get_field('terms_link', '4')){ ?><a href="<?php the_field('terms_link', '4'); ?>">Terms of Service</a><?php } ?> <?php if(get_field('privacy_link', '4')){ ?><a href="<?php the_field('privacy_link', '4'); ?>">Privacy Policy</a><?php } ?></p>
 						<div class="social-wrap text-right">
+							<?php if(get_field('instagram_link', '4')){ ?>
+								<a href="<?php the_field('instagram_link', '4'); ?>" target="_blank">
+									<img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-instagram.svg" alt="Hotel Engine | Instagram" />
+								</a>
+							<?php } ?>
 							<?php if(get_field('facebook_link', '4')){ ?>
 								<a href="<?php the_field('facebook_link', '4'); ?>" target="_blank">
 									<img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-facebook.svg" alt="Hotel Engine | Facebook" />

@@ -23,7 +23,7 @@
 	<style>
 	
 	/* SIGNUP SECTION */
-
+	/* add a signup-form class to a black container. Make sure there is a 40px on the outer container. */
 		.signup-form > .row:before 
 				{
 					  content: '';

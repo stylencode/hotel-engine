@@ -1,3 +1,7 @@
+<?php
+/**
+ * Template Name: Enterprise-Government
+**/?>
 <?php get_header(); ?>
 
 	

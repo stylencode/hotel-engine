@@ -116,7 +116,7 @@ $(document).ready(function() {
 				
 				window.sr = ScrollReveal();
         
-        sr.reveal('#logos .logo-single img');
+        		sr.reveal('#logos .logo-single img');
 				sr.reveal('h3');
 				sr.reveal('h4');
 				sr.reveal('h5');
@@ -124,14 +124,125 @@ $(document).ready(function() {
 				sr.reveal('#logorow-push .logorow_single img');
 				sr.reveal('#signup #signup-info img.abs');
 				sr.reveal('.mobile-show .lodginginfo-single');
+	     
+
+
 	
+
+
+
+  
+//COUNTER with number formatting
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+function animateCounters() {
+
+
+  $('.count').each(function () {
+
+          $(this).prop('Counter',0).animate({
+
+                Counter: $(this).text()
+
+
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function (now) {
+
+                    var num = formatNumber(Math.ceil(now));
+                    //console.log ();
+                    $(this).text(num);
+
+
+                }
+
+            });
+
+    });
+
+}
+
+function checkScroll (a,b)
+{
+  // if the stats are becoming visible, turn on animation once, and switch activator to 0
+  //console.log (a+ " vs Offset - "+b);
+  var vh = $( window ).height();
+  // 410 px is approximate height of the area right above stats
+  //console.log (b+ "  -  "+a+"   -   "+vh);
+
+  if ((b - a) < 475 & _countActivator)
+    {
+
+      $('.count').show();
+
+      //console.log ("Start animation: "+b+ "  -  "+a+"   -   "+vh);
+
+      animateCounters();
+
+      _countActivator = 0;
+
+    }
+}
+	
+// check current scroll on scrolling
+$(window).scroll(function (event) {
+
+    _scroll = $(window).scrollTop();
+    // Do something
+    //console.log (scroll+ " vs Offset - "+elementOffset);
+
+    checkScroll (_scroll,_elementOffset);
+
+});
+
+
+// IF STATS Exist start initial sequence for COUNTER with number formatting
+if ( $( "#statistics" ).length ) {
+ 
+    $('.count').hide();
+
+    var _elementOffset = $('#statistics').offset().top;
+    var _countActivator = 1;
+    var _scroll = $(window).scrollTop();
+
+    // check scroll upon initializing
+    checkScroll (_scroll,_elementOffset);
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 // MARKETO FORM HOMEPAGE
 
-$('#reg-form').ready(function() { /* code here  alert ("form ready"); */ loadScripts(); });
+$('#reg-form').ready(function() { 
+
+
+  // check if home page
+  if( $('body.home').length ){
+  
+    loadScripts(); 
+
+    
+  }
+
+  
+
+});
 
                 
   function loadScripts(){
