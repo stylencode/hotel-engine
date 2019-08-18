@@ -149,3 +149,14 @@
       </div>
 </section>
 <?php } ?>
+
+<style>
+	
+	@media only screen and (max-width:992px) {
+			#lodginginfo .mobile-show .main-single-image {
+			height: 290px !important;
+			display: block;
+			position: relative;
+		}
+	}
+</style>

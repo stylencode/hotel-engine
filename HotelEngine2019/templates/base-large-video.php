@@ -25,12 +25,15 @@ $image_url = get_site_url(null, '/wp-content/uploads/2019/07/bw-filler.png', 'ht
 				<div class="row m-0 justify-content-md-center">
 		            <div class="col-md-10">
 		              	 
-		              	 
+		              	 	<?php if ($lgVideo_url) { ?>
 				              <!-- trigger video popup -->
-							<a data-toggle="modal" data-target="#videoPopup" href="#" onclick="loadVideo()">
-								<img src = "<?php if ( wp_is_mobile() ) { ?><?php the_field('lgVideo_tablet_down_image'); ?><?php } else { ?><?php the_field('lgVideo_desktop_image'); ?><?php } ?>" style="display: block; width: 100%" />
+							<a class="modalpopup" data-toggle="modal" data-target="#videoPopup" href="#" onclick="loadVideo()">
+								<img class="play" src="<?php echo get_stylesheet_directory_uri();?>/images/icon-play.svg" alt="<?php echo $lgVideo_headline; ?>" />
+								<img src = "<?php if ( wp_is_mobile() ) { ?><?php the_field('lgVideo_tablet_down_image'); ?><?php } else { ?><?php the_field('lgVideo_desktop_image'); ?><?php } ?>" style="display: block; width: 100%" alt="<?php echo $lgVideo_headline; ?>"/>
 							</a>
-
+							<?php } else { ?>
+								<img src = "<?php if ( wp_is_mobile() ) { ?><?php the_field('lgVideo_tablet_down_image'); ?><?php } else { ?><?php the_field('lgVideo_desktop_image'); ?><?php } ?>" style="display: block; width: 100%" alt="<?php echo $lgVideo_headline; ?>"/>
+							<?php } ?>
 		             </div>
 		        </div>
 
@@ -39,9 +42,9 @@ $image_url = get_site_url(null, '/wp-content/uploads/2019/07/bw-filler.png', 'ht
      </div>
      <!-- body of text -->
     <div class="row m-0">
-    	<div class="container pt-5 pb-5 justify-content-<?php echo $text_position; ?>">
+    	<div class="container pt-5 pb-5">
 
-	          <div class="col-lg-8 offset-2 col-md-12 text-<?php echo $text_position; ?> p-5">
+	          <div class="col-lg-8 offset-lg-2 col-md-12 text-<?php echo $text_position; ?> p-5">
 
 	              
 	              <?php if ($lgVideo_topic) { ?><h5 class="text-<?php echo $text_position; ?>"><?php echo $lgVideo_topic; ?></h5><?php } ?>

@@ -1,45 +1,31 @@
-
-
-<section id="benefits" style="padding: 150px 0; background-color: black;">
-
-		<div class="container "> 
-
-	      <div class="row text-left m-0">
-
-		         <div class="col-sm-6">
-		               
-		         		<img src="https://via.placeholder.com/80x80" alt="Image">
-
-		                <h5 style="color: white;">topic</h5>
-		                <h2 style="color: white;">headline</h2>
-		                <p style="color: white;">lorem ipsum</p>
-		       
-		                
-		       
-		        </div>
-
-				<!-- set up columns for repetition -->
-		         <div class="col-sm-6">
-		               
-		         		<ul style="color: white;">
-		         			<li>Topic 1</li>
-		         			<li>Topic 2</li>
-		         			<li>Topic 3</li>
-		         			<li>Topic 4</li>
-		         			<li>Topic 5</li>
-		         			<li>Topic 6</li>
-		         			<li>Topic 7</li>
-		         			<li>Topic 8</li>
-		         			<li>Topic 9</li>
-		         			<li>Topic 10</li>
-		         			<li>Topic 11</li>
-
-		         		</ul>
-
-		               
-		       
-		        </div>
-	      	</div>
-
-	      </div>
-</section>
+<?php if( have_rows('career_benefits')): while( have_rows('career_benefits')) : the_row(); ?>
+	<section id="benefits">
+			<div class="container-fluid p-0"> 
+			  <div class="row text-left m-0">
+					 <div class="col-xl-4 offset-xl-1 col-md-5 col-sm-6 col-12">
+						 <?php if(get_sub_field('icon')) { ?>
+							<img src="<?php the_sub_field('icon'); ?>" alt="Image">
+						  <?php } ?>
+						  <?php if(get_sub_field('topic')) { ?>
+							<h5 style="color: white;"><?php the_sub_field('topic'); ?></h5>
+						  <?php } ?>
+						  <?php if(get_sub_field('title')) { ?>
+							<h4 style="color: white;"><?php the_sub_field('title'); ?></h4>
+						  <?php } ?>
+						  <?php if(get_sub_field('description')) { ?>
+							<p style="color: white;"><?php the_sub_field('description'); ?></p>
+						  <?php } ?>
+					</div>
+					 <div class="col-md-5 offset-md-1 col-sm-6 col-12">
+						 <?php if( have_rows('list_item')): ?>
+							<ul style="color: white;">
+								<?php while( have_rows('list_item')) : the_row(); ?>
+									<li><?php the_sub_field('item'); ?></li>
+								<?php endwhile; ?>
+							</ul>
+						 <?php endif; ?>
+					</div>
+				</div>
+			  </div>
+	</section>
+<?php endwhile; endif; ?>

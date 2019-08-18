@@ -43,30 +43,25 @@
 				                
 		</div>
 
-		<div class="row m-0 flex-row d-flex align-items-center" style="background-image: url('<?php the_field('featureTag_image'); ?>'); background-size: cover; background-position: center; min-height: <?php echo $featureTag_height; ?>">
+		<div class="row m-0 flex-row d-flex align-items-center" style="background-image: url('<?php if ( wp_is_mobile() ) { ?><?php the_field('featureTag_image_sm'); ?><?php } else { ?><?php the_field('featureTag_image'); ?><?php } ?>'); background-size: cover; background-position: center; min-height: <?php echo $featureTag_height; ?>">
 
 				                <div class="col-md-6 offset-md-6 col-sm-12  <?php if($featureTag_alignment == 'right') { echo "offset-md-6"; }?> p-5">
 
 					                  
-					                  <?php if ($featureTag_topic) { ?><h5 class="text-<?php echo $featureTag_text_position; ?>">
-
+					                  <?php if ($featureTag_topic) { ?><h5 class="text-<?php echo $featureTag_text_position; ?>" <?php if ( wp_is_mobile() ) { ?> style="color:white;"<?php } ?>>
 					                  <?php echo $featureTag_topic; ?></h5><?php } ?>
-
-									              
-
-									  <?php if ($featureTag_headline) { ?><h3 class="text-<?php echo $featureTag_text_position; ?>">	<?php echo $featureTag_headline; ?></h3>
+									  <?php if ($featureTag_headline) { ?><h3 class="text-<?php echo $featureTag_text_position; ?>" <?php if ( wp_is_mobile() ) { ?> style="color:white;"<?php } ?>>	<?php echo $featureTag_headline; ?></h3>
 									  <?php } ?>
-									              
-
-									    <?php if ($featureTag_body) { ?><p class="text-<?php echo $featureTag_text_position; ?>"><?php echo $featureTag_body; ?></p><?php } ?>
+									    <?php if ($featureTag_body) { ?><p class="text-<?php echo $featureTag_text_position; ?>" <?php if ( wp_is_mobile() ) { ?> style="color:white;"<?php } ?>><?php echo $featureTag_body; ?></p><?php } ?>
 
 
 
-									    <?php if ($featureTag_cta['featureTag_cta_url']['url']) { ?>
 
-									        <a class="btn btn-primary" href="<?php echo $featureTag_cta['cta_url']['url']; ?>" target="_blank" style="color: white;"><?php echo $featureTag_cta['cta_label']; ?></a>
-
-									    <?php } ?>
+									       <?php if( have_rows('feature_tag_button') ): while( have_rows('feature_tag_button')) : the_row(); ?>
+														<a class="btn" <?php if(get_sub_field('button_page_link')) { ?> href="<?php the_sub_field('button_page_link'); ?>" <?php }else { ?> href="<?php the_sub_field('external_link'); ?>" target="_blank"<?php } ?>>
+															<?php the_sub_field('button_text'); ?>
+														</a>
+													<?php endwhile; endif; ?>
 
 
 				                </div>

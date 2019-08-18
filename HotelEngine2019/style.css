@@ -5,3 +5,46 @@ Version: 1.0
 Author: Brent Thelen Design
 Author URI: https://brentthelendesign.com
 */
+
+#pricing .row {
+	display: block;
+}
+
+	 .main-single-image {
+		height: auto !important;
+		max-width: 100%;
+	}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .page-template-page-features .card .card-body,
+.page-template-page-features .card-img-bottom {
+	height: 100%;
+}
+.page-template-page-about-us .my-auto {
+	height: 100%;
+}
+}
+
+#slideshow-lodging-main video {
+	height: auto !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+#signup-info,
+.mktoForm {
+               text-align: center !important;
+}
+#signup #signup-info form#mktoForm_1058.mktoForm .mktoFormRow {
+    display: inline-block !important;
+}
+.mktoButtonRow {
+    display: block !important;
+    text-align: center !important;
+}
+}
+
+ @media (max-width: 576px) {
+.page-template-page-about-us .grid .content {
+    height: 150px !important;
+}
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Hotel Partners
+ * Template Name: Business Type
 **/?>
 <?php get_header(); ?>
 
@@ -9,18 +9,14 @@
 	<?php get_template_part('templates/base', 'hero'); ?>
 
 	
-	<?php get_template_part('templates/base', '2col'); ?>
+	<?php get_template_part('templates/base', 'feature'); ?>
 
 
 	<?php get_template_part('templates/base', 'testimonials'); ?>
 
 
-	
-
 	<!-- SIGNUP -->
-	<?php get_template_part('templates/section', 'moform'); ?>
-
-
-
+	<?php get_template_part('templates/section', 'signup'); ?>
+	
 
 <?php get_footer(); ?>

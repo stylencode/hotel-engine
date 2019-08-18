@@ -16,7 +16,7 @@ $font-stack-header: $font-stack-body;
 $border-radius: 4px;
 
 $grid-breakpoints: (
-  xs: 0,
+  xs: 0, 
   sm: 576px,
   md: 768px,
   lg: 993px,
@@ -29,12 +29,11 @@ $container-max-widths: (
   /*sm: 540px,*/
   sm: 576px,
   md: 768px,
-  /*lg: 960px,*/
   lg: 960px,
   /*xl: 1200px,*/
   xl: 1260px,
   xxl: 1440px,
-  xxxl: 1800px
+  xxxl: 1800px 
 );
 
 @import "../bootstrap/scss/bootstrap";
@@ -73,6 +72,7 @@ h3,
 h4,
 .h4 {
   font-size: 24px;
+  font-weight: 600;
 }
 
 h5,
@@ -80,6 +80,8 @@ h5,
   font-size: 14px;
   letter-spacing: 0.4em;
   font-variant: small-caps;
+  text-transform: lowercase;
+  font-weight: bold;
 }
 
 ul {
@@ -92,17 +94,9 @@ ul {
     li {
       list-style: none;
       padding-bottom: 15px;
+	  background: url('../images/icon-checkmark.svg') no-repeat top left;
+	  padding-left: 44px;
 
-      &:before  {
-        content: '';
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        vertical-align: middle;
-        background: url('../images/icon-checkmark.svg') no-repeat center;
-        background-size: contain;
-        margin-right: 20px;
-      }
     }
   }
 }
@@ -125,7 +119,7 @@ a {
   }
 }
 
-.btn,
+.btn, input.gform_button,
 button {
   display: inline-block;
   width: auto;
@@ -178,6 +172,9 @@ button {
     color: $color-btn-primary;
     padding: 10px 35px;
   }
+}
+input.gform_button {
+	padding: .375rem 0.75rem !important;
 }
 a.intercom {
     position: fixed;
@@ -269,10 +266,10 @@ span.menu-text {
 	
 	.greyspace {
 		width: 100%;
-		background: #C8C8C8;
+		background: $white;
 		
 		&.top {
-			height: 4vh;
+			height: 1vh;
 		}
 		&.bottom {
 			height: 3vh;
@@ -315,6 +312,9 @@ span.menu-text {
 				margin-bottom: 16px;
 			}
 		}
+	}
+	.logo {
+		margin-top: -16px;
 	}
 } 
 
@@ -528,9 +528,19 @@ form#mktoForm_1026 {
   {
           float: right !important;
   }
-
-
-
+	.mktoHtmlText.mktoHasWidth {
+		
+		span, a {
+		font-size: 8px;
+		font-style: italic;
+		}
+	}
+}
+form#mktoForm_1028 {
+	
+	input#Phone {
+		margin-right: 10px;
+	}
 }
 
 .hp-slider__testimonial-outer {
@@ -655,6 +665,15 @@ header {
 	div#new-user-count {
 		display: inline-block;
 	}
+	.small p {
+		font-size: 10px;
+		color: $white;
+		
+		a {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
 }
 
 
@@ -671,6 +690,10 @@ header {
       width: 100%;
     }
   }
+	h5 {
+		margin-bottom: 40px;
+		font-weight: normal;
+	}
 }
 
 #lodginginfo {
@@ -905,8 +928,9 @@ header {
     }
   }
 
-  .btn {
+  div.btn {
     margin-top: 40px;
+	  cursor: none;
   }
 }
 
@@ -926,6 +950,9 @@ header {
 	overflow: hidden;
 	
 	#signup-info {
+		p {
+			color: $white;
+		}
 		
 	
 		> .row {
@@ -985,13 +1012,6 @@ header {
 				margin-top: 24px;
 			}
 		}
-
-
-   
-
-
-      
-
 
 
 
@@ -1152,7 +1172,7 @@ header {
 /* PRICING SECTION */
 
 #pricing {
-	padding: 72px 0;
+	padding-bottom: 72px;
 	
 
 	.d-flex.card.p-4.m-0 {
@@ -1203,6 +1223,12 @@ header {
 			}
 		}
 	}
+	.btn {
+		margin-left: 24px;
+	}
+	.small p {
+		margin: 1em 0;
+	}
 }
 
 
@@ -1252,11 +1278,31 @@ header {
 
 #largeVideo {
 	background: $black; 
+	border-left: 24px solid $white;
+	border-right: 24px solid $white;
 	
 	
 	h3, p {
 		color: $white;
 	}
+	.justify-content-md-center {
+		position: relative;
+		
+		.modalpopup {
+			cursor: pointer;
+		}
+		
+		.play {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 40px;
+			margin-top: -20px;
+			margin-left: -20px;
+			cursor: pointer;
+		}
+	}
+	
 }
 #ceo {
 	background-color: $black;
@@ -1292,12 +1338,9 @@ header {
 	border-left: 24px solid $white;
 	border-right: 24px solid $white;
 	border-top: 24px solid $white;
-	
+}
 	.logo-single {
-		margin-top: 0;
-	}
-	
-	.logo-single {
+	  margin-top: 0 !important;
 	  position: relative;
 	  width: 100%;
 		.image {
@@ -1334,12 +1377,14 @@ header {
 	.logo-single:hover .overlay {
 	  opacity: 1;
 	}
-}
 
 /* Benefits */
 
 #benefits {
+	position: relative;
 	border: 24px solid white;
+	padding: 24px;
+	background-color: $black;
 	
 	h5 {
 		margin-bottom: 39px;
@@ -1347,10 +1392,8 @@ header {
 	
 	img {
 		margin-bottom: 62px;
+		max-width: 120px;
 	}
-
-padding: 150px 0;
-background-color: $black;
 	
 ul {
 		padding-left: 18px;
@@ -1365,9 +1408,734 @@ ul {
 		background-size: 245px;
 	}*/
 }
+#benefits .container-fluid .row {
+	position: relative;
+	padding: 125px 0;
+}
+#benefits .container-fluid > .row:before {
+    content: '';
+    position: absolute;
+    background: url(../images/icon-dot-pattern-white.png) repeat;
+    width: 33.3333%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+/* FEATURE SECTION STYLES */
+
+section.light {
+	h1, h5, h2, h3, p {
+		color: $white;
+	}
+}
+section#largeImage {
+    border: 24px solid white;
+}
+
+
+.page-template-page-features {
+	
+	.card {
+		border-radius: 4px;
+		border: none;
+		
+		.card-body {
+			padding: 80px 48px;
+			background: #F3F4F7;
+		} 
+		.card-footer {
+			border: none;
+			background: #F3F4F7;
+		}
+	}
+	
+} 
+section.container {
+		margin-bottom: 24px;
+}
+
+/* FEATURE WITH TAG */
+
+.tag-wrap {
+	background: rgba(47, 88, 235, 0.62);
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+	border-radius: 4px;
+	
+	h4 {
+		color: $white;
+	}
+}
+
+/* GROUP BOOKINGS */
+
+.threecol {
+	padding: 30px;
+}
+
+.card-deck.threeup {
+	.card {
+		border: none;
+		background: #F3F4F7;
+		border-radius: 4px;
+	}
+	.card-footer {
+		display: none;
+	}
+	img {
+		max-width: 60px;
+		margin-bottom: 50px;
+	}
+}
+.group-bookform {
+	padding: 80px 0;
+	background-color: $black;
+	text-align: center;
+	position: relative;
+	
+	h3 {
+		color: $white;
+		margin-bottom: 24px;
+	}
+	.signup-form {
+		position: inherit;
+	}
+}
+
+/* GROUP BOOKINGS FORM (Group Bookings & Contact Pages) */
+div#gform_wrapper_4, div#gform_wrapper_11 {
+	
+	input, select {
+		padding: 8px 16px;
+		font-size: 17px;
+		color: #929395;
+	}
+	
+	input#input_4_1, input#input_11_1 {
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	input#input_4_15, input#input_11_15 {
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	.instruction {
+		color: $white;
+	}
+	li#field_4_2, li#field_4_3, li#field_11_2, li#field_11_3 {
+		display: inline-block;
+		width: 50%;
+	
+		input {
+			width: 100%;
+		}
+	}
+	select#input_4_4, select#input_11_4 {
+		width: 100%;
+		padding: 25px;
+		margin-bottom: 24px;
+		background: $white;
+		color: #929395;
+    	padding: 9px 16px;
+	}
+	li#field_4_4, li#field_4_7, li#field_4_11, li#field_4_12, li#field_4_8, li#field_4_14, li#field_11_4, li#field_11_7, li#field_11_11, li#field_11_12, li#field_11_8, li#field_11_14 {
+		display: inline-block;
+		width: 50%;
+		
+		input {
+			width: 100%;
+		}
+	}
+	li#field_4_7 .instruction {
+		display: none;
+	}
+	li#field_11_4 {
+		vertical-align: top;
+	}
+	p {
+		text-align: left;
+		color: #878787;
+		font-size: 12px;
+		margin: 22px 0 0px 0;
+		
+		a {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+	input#gform_submit_button_4, input#gform_submit_button_11 {
+		color: $white;
+	}
+}
+
+div#gform_confirmation_message_4 {
+    color: $white;
+}
+div#gform_wrapper_11 p a {
+    color: $black;
+}
+/* THREECOL IMAGES */
+
+.image-grid-3 {
+	padding: 30px;
+	
+	.content.m-1 {
+		position: relative;
+		
+		p {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			text-align: center;
+			background: rgba(0,0,0,.8);
+			font-weight: bold;
+			color: $white;
+			padding: 5px 8px;
+			border-radius: 4px;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+/* CONTACT PAGE SIGNUP PAGE FORM & MAP SECTION */
+
+
+.tab-nav-wrap {
+	 background-color: $white;
+		border-radius: 4px;
+	  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+	padding: 48px 32px;
+	cursor: pointer;
+	
+	img {
+		max-width: 40px;
+		margin-bottom: 25px;
+	}
+	
+	p {
+			color: $ltblue !important;
+		    max-width: 50%;
+    		margin: 0 25%;
+	}
+
+}
+.page-template-page-contact-us, .page-template-page-signup {
+	
+	textarea#input_8_6 {
+		border: 1px solid #DDDEE0 !important;
+		border-radius: 4px;
+	}
+	
+	
+	/* MARKETO FORM TAB NAV */ 
+	
+	#mktoRadio_932_0,#mktoRadio_932_1,.mktoForm .mktoRadioList, .mktoFormRow:first-child 
+              {
+
+                display: none !important;
+              }
+	
+	#item_1, #item_2 {
+		height: auto;
+		width: 100%;
+		background-color: white;
+		color: black;
+		font-size: 1em;
+		vertical-align: bottom;
+		text-align: center;
+		cursor: pointer;
+		margin: 5px;
+		border-radius: 4px;
+		border: 1px solid black;
+		padding: 24px 80px;
+		
+		&.active {
+			background: rgba(57, 96, 234, 0.1);
+			color: $ltblue;
+			border: 1px solid #3960EA;
+			
+			a {
+				color: $ltblue;
+			}
+		}
+	}
+	
+	form#mktoForm_1088 {
+		width: 100% !important;
+		margin: 0 auto !important;
+		padding: 0 !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		
+		.mktoFormRow {
+			width: 100% !important;
+			
+			input#Email {
+				-webkit-appearance: none;
+				background-color: $white;
+				line-height: 1.5em;
+				color: #000;
+				border: 1px solid #DDDEE0;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				box-shadow: none;
+				min-height: 1.9em;
+				padding: 16px !important; 
+				width: 100% !important;
+			}
+			input#Phone {
+				width: 100% !important;
+			}
+			.mktoHtmlText.mktoHasWidth {
+				width: 100% !important;
+			}
+		}
+		.mktoFormCol {
+			width: 50% !important;
+			
+			input#LastName {
+				width: 100% !important;
+			}
+			
+			
+		}
+		.mktoFieldWrap {
+			float: left;
+			width: 100%;
+		}
+		.mktoFormRow:nth-child(4), .mktoFormRow:nth-child(5), .mktoFormRow:nth-child(6), .mktoFormRow:nth-child(7) {
+			
+			.mktoFormCol {
+				width: 100% !important;
+				
+				input#Company {
+					width: 100% !important;
+				}
+			}
+		}
+	}
+	
+		#gform_3 li {
+			width: 50%;
+			display: inline-block;
+			
+			&#field_3_7 {
+				width: 100%;
+			}
+			input {
+				width: 100%;
+				
+				
+			}
+			textarea#input_3_7 {
+			   border-radius: 4px;
+    			border: 1px solid #DDDEE0 !important;
+				
+			}
+		}
+}
+.page-template-page-signup {
+	#item_1, #item_2 {
+		padding: 24px;
+		margin-top: 33px;
+		margin-bottom: 0;
+	}
+}
+
+#hiToCEO {
+	.card {
+		border: none;
+		cursor: pointer;
+	}
+    background: transparent;
+    border: 1px solid $dkgrey;
+	border-radius: 4px;
+	
+	.card-header {
+		background: transparent;	
+		border-bottom: none;
+	 .row {
+			background: url("../images/icon-carot-up.svg") no-repeat 98%; 
+			background-size: 14px;
+		 
+		 &.collapsed {
+			background: url("../images/icon-carot-down.svg") no-repeat 98%; 
+			background-size: 14px;
+		 }
+		 
+		 p {
+			 margin-bottom: 0;
+		 }
+		}
+	}
+	a {
+			color: $ltblue;
+		}
+}
+#accordionAdditionalResources, #accordionAccountSupport {
+	.card {
+		
+		margin-bottom: 8px;
+		cursor: pointer;
+		background: #F3F4F7;
+		
+		.card-header {
+			font-weight: bold;
+			color: $black;
+			border-bottom: none;
+			background: white;
+			
+			.row {
+			background: url("../images/icon-carot-up.svg") no-repeat 98%; 
+			background-size: 14px;
+		 
+				 &.collapsed {
+					background: url("../images/icon-carot-down.svg") no-repeat 98%; 
+					background-size: 14px;
+				 }
+			}
+		}
+		
+		.card-header > .collapsed {
+			color: $ltblue;
+			border-bottom: none;
+			font-weight: normal;
+			
+			.row {
+				background: url("../images/icon-carot-up.svg") no-repeat 98%; 
+				background-size: 14px;
+
+			 &.collapsed {
+				background: url("../images/icon-carot-down.svg") no-repeat 98%; 
+				background-size: 14px;
+				 
+				
+			 }
+
+			 p {
+				 margin-bottom: 0;
+			 }
+			}
+		}
+		.card-body {
+			background: $white;
+			
+		}
+	}
+}
+.active .tab-nav-wrap {
+    border: 1px solid $black;
+}
+
+.map-responsive, .iframe-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+	
+	iframe{
+		left:0;
+		top:0;
+		height:100%;
+		width:100%;
+		position:absolute;
+	}
+
+}
+#headquarters {
+	img {
+		margin-bottom: 1em;
+	}
+	a {
+		color: $ltblue;
+	}
+}
+
+/* GravityForms Styles */
+
+.gform_wrapper .gform_body {
+	
+	label.gfield_label {
+		display: none !important;
+	}
+	input {
+		border-radius: 4px;
+		border: 1px solid #DDDEE0 !important;
+	}
+}
+.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    border: 1px solid #DDDEE0 !important;
+}
+div#gform_wrapper_5 li, div#gform_wrapper_6 li, div#gform_wrapper_8 li, div#gform_wrapper_10 li {
+    width: 50%;
+    display: inline-block !important;
+	
+	input {
+		width: 100%;
+		padding: 6px 12px;
+		font-size: 14px;
+	}
+	&#field_5_10, &#field_5_9 {
+		width: 100% !important;
+		display: block !important;
+	}
+	&#field_6_6, &#field_6_7, &#field_8_6, &#field_8_8, &#field_10_5, &#field_10_6 {
+		width: 100% !important;
+		display: block;
+		
+		textarea#input_6_6, textarea#field_8_6 {
+			border-radius: 4px !important;
+			border: 1px solid #DDDEE0 !important;
+			padding: 6px 12px;
+			font-size: 14px;
+		}
+	}
+}
+
+/* ABOUT PAGE STYLING */
+
+section.grid {
+    border: 24px solid white;
+}
+
+.twocol-about {
+	padding: 80px 0;
+}
+section#statistics {
+	background: #F3F4F7;
+	border: 24px solid white;
+	
+	.statistics-wrapper {
+		padding: 70px 0;
+		
+		.statistic {
+			border-radius: 4px;
+			padding: 1em 24px;
+		
+			h3 {
+				color: $ltblue;
+				font-size: 46px;
+
+				mark {
+					background: transparent;
+					color: $ltblue;
+					font-size: 46px;
+				}
+			}
+		}
+	}
+}
+.image-grid-team {
+	 padding: 50px 0;
+	
+	.logo-single {
+		overflow: hidden;
+	}
+	.overlay {
+		background: rgba(57, 96, 234, 0.8);
+		
+		p {
+			position: relative;
+			margin-top: 40px;
+			margin-left: 40px;
+			left: 0;
+			top: 0;
+		}
+	}
+	p.card-title {
+		margin: 16px 0 8px 0;
+	}
+}
+section.join {
+	padding: 50px 0 144px 0;
+	p a {
+		color: $ltblue;
+	}
+}
+
+/* CUSTOMER TYPE */
+
+#hero {
+	margin-top: 80px;
+	
+	.padz {
+		padding: 5em;
+	}
+		.justify-content-left .content {
+			h5.text-left {
+			margin-bottom: 26px;
+			}
+		p.text-left {
+			margin-top: 6px;
+		}
+	}
+}
+
+/* HOTEL PARTNERS */
+
+section.feature-section.partner-blocks {
+	padding: 80px 0;
+	
+	.card-deck {
+		.card {
+			border: none;
+			background: #F3F4F7;
+			border-radius: 4px;
+			
+			.card-body {
+				padding: 4em 3em;
+			}
+		}
+		.card-footer {
+			display: none;
+		}
+		img {
+			max-width: 60px;
+			margin-bottom: 50px;
+		}
+	}
+
+}
+
+form#gform_5 {
+	#field_5_9, #field_5_10 {
+    	color: $white;
+		font-size: 14px;
+		
+		a {
+			color: $white;
+		}
+	}
+}
+.page-template-page-hotel-partners .group-bookform .partnersform > div:before 
+				{
+					  content: '';
+					  position: absolute;
+					  background: url('https://hotelengine.mystagingwebsite.com/wp-content/themes/HotelEngine2019/images/icon-dot-pattern-white.png') repeat;
+						width: 25%;
+						height: 96%;
+						left: 33px;
+						top: 2%;
+						background-position: center center;
+				}
+
+.page-template-page-hotel-partners .group-bookform {
+	p.intro, h3 {
+		color: white;
+		text-align: left !important;
+		padding-left: 15px;
+	}
+}
+
+
+/* FAQ PAGE */
+
+#faq {
+	padding: 45px 0;	
+	
+	h1 {
+		margin-top: 80px;
+	}
+	
+	div#accordionFaq {
+		
+		.card {
+			border: none;
+    		background: white;
+			border-bottom: 1px solid #E3E4E8;
+			
+			.card-header {
+				background: $white;
+				font-weight: bold;
+				padding: 24px 0;
+				
+				mark.pad {
+					padding-right: 1.5em;
+					max-width: 94%;
+   					display: block;
+					background: transparent;
+				}
+				
+				div {
+					background: url("../images/icon-minus.svg") no-repeat right; 
+					background-size: 18px;
+					
+					&.collapsed {
+						background: url("../images/icon-plus.svg") no-repeat right; 
+						background-size: 18px;
+					}
+				}
+			}
+			.card-body {
+				padding-left: 0;
+				
+				a {
+					color: $ltblue;
+				}
+			}
+		}
+	}
+}
+
+/* FULL WIDTH PAGE */
+
+.entry-content-page {
+    padding: 40px 0;
+}
+
+/* SIGNUP PAGE */
+
+#signupPage {
+	
+	.testimonial-outer {
+		max-width: 100%;
+		text-align: left;
+		color: $white;
+		
+	
+
+			blockquote { 
+				font-size: 24px;
+				line-height: 160%;
+				display: flex;
+				align-items: center;
+				text-align: left;
+				letter-spacing: -0.03em;
+				font-weight: 600;
+			}
+			cite {
+				font-style: normal;
+				display: block;
+				margin-bottom: 20px;
+			}
+			.slick-dots {
+				text-align: left;
+				li {
+					margin: 0;
+					
+					button:before {
+					    color: gray;
+
+					}
+					&.slick-active button:before {
+						color: white !important;
+					}
+				}
+			}
+
+		}
+}
 
 /*   Media Queries
 ================================================== */
+@media only screen and (min-width: 1440px) {
+	#hero .lg-header-width {
+		max-width: 750px;
+	}
+}
 
 @media only screen and (max-width: 1440px) {
 	#signup #signup-info img.abs {
@@ -1388,6 +2156,9 @@ ul {
 		max-width: 100%;
 		padding: 40px 40px 0 40px;
 	}
+	#hero .lg-header-width {
+		max-width: 750px;
+	}
 	
 }
 
@@ -1397,9 +2168,7 @@ section#slideshow.container {
 }
 
 @media only screen and (max-width: 1260px) {
-		header {
-			padding: 20px 0;
-		}
+
 		#slideshow {
 			padding-top: 65px;
 		}
@@ -1427,12 +2196,21 @@ section#slideshow.container {
 		#ceo .quote-wrap {
 			border-top: 0;
 	}
+	#benefits .container-fluid .row {
+		padding: 55px 0;
 	}
+	#hiToCEO .card-header .row p {
+		padding-left: 24px;
+	}
+}
 
 	@media only screen and (min-width: 992px) and (max-width: 1260px) {
 		#logorow {
 			padding-left: 0;
 			padding-right: 0;
+		}
+			#hero .lg-header-width {
+			max-width: 750px;
 		}
 	}
 
@@ -1551,6 +2329,22 @@ section#slideshow.container {
 		.d-flex.card.p-4.m-0 {
 			margin-bottom: 16px !important;
 		} 
+		header{
+			padding: 0;
+			&.container-fluid {
+				border-bottom: 1px solid #E3E4E8;
+			}
+		}
+		#hero .padz {
+			padding: 2em;
+		}
+		#ceo {
+			padding-bottom: 88px;
+		}
+		.tab-nav-wrap {
+			padding: 28px 0;
+		}
+		
 		
 	}
 
@@ -1563,9 +2357,6 @@ section#slideshow.container {
 			padding: 5px 30px 5px 0;
 		}
 		
-		
-		
-		
 		.lodginginfo-thumbnail-col h3 {
 			text-align: center;
 		}
@@ -1573,6 +2364,10 @@ section#slideshow.container {
 			margin: 16px auto;
 			
 		}
+		#hero .lg-header-width {
+			max-width: 750px;
+		}
+		
 		
 	}
 
@@ -1633,13 +2428,97 @@ section#slideshow.container {
 			padding: 0;
 		}
 		
+		.page-template-page-features .featurewithtag, .page-template-page-features section.container.featuresection {
+			text-align: center; 
+			margin-bottom: 0;
+			
+			h3, p {
+				text-align: center !important;
+				color: $white;
+			}
+		}
+		.featurewithtag, section.container.featuresection, section.twocol-about.container {
+			h3, p {
+				text-align: center !important;
+			}
+		}
+		section.container.featuresection {
+			h3, h3.text-left, p {
+				text-align: center !important;
+			}
+		}
 		
+		.page-template-page-features .card .card-body {
+			padding: 24px 40px;
+		}
+		#pricing .card-body {
+			padding: 0;
+		}
+		.row.small p {
+			text-align: center;
+			width: 100%;
+		}
+		section.container {
+				margin-bottom: 0;
+		}
+		.threecol .card-body {
+			padding: 1.25rem 0;
+		}
+		.group-bookform {
+			padding: 40px 0;
+		}
+		.my-auto {
+			h3, p {
+			text-align: center;
+			}
+		}
+		#hero .padz {
+			h5, h1, p {
+				text-align: center !important;
+			}
+		}
+		section#signupPage {
+			margin-top: 120px !important;
+		}
+		.tab-nav-wrap {
+			text-align: left;
+			padding: 28px;
+			
+			img {
+				max-width: 40px;
+				margin-bottom: 0;
+				vertical-align: middle;
+			}
+			p {
+				margin: auto;
+				display: inline-block;
+				vertical-align: middle;
+				padding-left: 24px;
+			}
+		}
+		.page-template-page-contact-us #item_1, .page-template-page-contact-us #item_2 {
+			padding: 24px;			
+		}
+		#hero .col-md-6.p-0.order-sm-12 {
+			min-height: 281px;
+		}
 		
 		
 	}
 
 	@media only screen and (min-width: 576px) and (max-width: 767px) {
+		#pricing .card-body {
+			padding: 0;
+		}
 	}
+
+@media only screen and (max-width: 640px) { 
+	div#gform_wrapper_4 select#input_4_4, div#gform_wrapper_11 select#input_11_4 {
+			line-height: 2 !important;
+			min-height: 2rem !important;
+			padding: 14px 10px !important;
+		}
+}
 
 	@media only screen and (max-width: 575px) {
 		#footer-wrap {
@@ -1714,8 +2593,136 @@ section#slideshow.container {
 				margin-top: -6px;
 			}
 		}
+		section#statistics {
+			border: 16px solid #F3F4F7;
+		}
+		section.twocol-about.container {
+			text-align: center;
+			
+			h3, p {
+				text-align: center;
+			}
+		}
+		section#statistics .statistics-wrapper {
+			padding: 0;
+		}
+		section.grid {
+			border: 0;
+		}
+		.image-grid-team {
+			padding: 50px 0 0 0;
+		}
+		form#mktoForm_1026 .mktoButtonRow {
+			margin-top: 10px;
+		}
+		form#mktoForm_1026 .mktoButtonRow {
+			float: none !important;
+			display: block !important;
+			width: 100%;
+		}
+		section#slideshow.container {
+			padding: 0;
+			overflow: hidden;
+		}
 		
+		.container.responsive-container {
+			padding: 0;
+		}
+		.signup-form {
+			padding: 1em;
+		}
+		.featurewithtag {
+			h3, p {
+				color: white;
+			}
+		}
+		#largeImage .p-5 {
+			padding: 0 !important;
+		}
+		#pricing {
+			padding-bottom: 3em;
+			
+			.card-deck {
+				padding: 1em;
+			}
+		}
+		section.container.group-bookform {
+			text-align: left;
+		}
+		.card-deck.threeup img {
+			margin-bottom: 1.5em;
+		}
+		#benefits .container-fluid > .row:before {
+			background: transparent;
+		}
+		#ceo {
+			border: none;
+			padding: 16px !important;
+			padding-bottom: 80px !important;
+			
+			.quote-wrap p:first-child {
+			margin-bottom: 37px;
+			}
+			.quote-wrap p {
+				line-height: 180%;
+			}
+		}
+		#logos.missions {
+			padding: 0;
+			border-left: 16px solid #F3F4F7;
+			border-right: 16px solid #F3F4F7;
+			border-top: 16px solid #F3F4F7;
+		}
+		section.feature-section.partner-blocks {
+			padding: 24px 0;
+		}
+		#faq {
+			h1 {
+				text-align: center;
+			}
+		}
+		#signupPage {
+			.row.flex-row.d-flex.align-items-center {
+				height: auto !important;
+			}
+		}
+		#largeVideo {
+			border: none;
+			padding: 0;
+		}
+		form#mktoForm_1026 {
+			background: transparent;
+
+			.mktoFormRow {
+				clear: both !important;
+				width: 100% !important;
+				display: block !important;
+
+				input#Email {
+					border-radius: 4px;
+					    padding: 20px 24px !important;
+				}
+
+			}
+			.mktoButtonRow {
+				text-align: center;
+			}
+
+		}
+		.tab-nav-wrap p { 
+			    max-width: 70%;
+		}
+		.page-template-page-contact-us form#mktoForm_1088 .mktoFormRow:nth-child(4) .mktoFormCol input#Company, .page-template-page-contact-us form#mktoForm_1088 .mktoFormRow:nth-child(5) .mktoFormCol input#Company, .page-template-page-contact-us form#mktoForm_1088 .mktoFormRow:nth-child(6) .mktoFormCol input#Company, .page-template-page-contact-us form#mktoForm_1088 .mktoFormRow:nth-child(7) .mktoFormCol input#Company, .page-template-page-signup form#mktoForm_1088 .mktoFormRow:nth-child(4) .mktoFormCol input#Company, .page-template-page-signup form#mktoForm_1088 .mktoFormRow:nth-child(5) .mktoFormCol input#Company, .page-template-page-signup form#mktoForm_1088 .mktoFormRow:nth-child(6) .mktoFormCol input#Company, .page-template-page-signup form#mktoForm_1088 .mktoFormRow:nth-child(7) .mktoFormCol input#Company {
+			width: 100%;
+		}
 		
+		.page-template-page-contact-us form#mktoForm_1088 .mktoFormCol, .page-template-page-signup form#mktoForm_1088 .mktoFormCol {
+			width: 50% !important;
+			display: inline-block;
+		}
+		.featuresection .p-5 {
+			padding: 3em 1em!important;
+		}
 		
-		
-	}
+}
+

@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 $(document).ready(function() {
 
 
@@ -60,12 +62,6 @@ $(document).ready(function() {
 
 
 
-//PRELOADER
-	$('#preloader').delay(1500).fadeOut('slow'); 
-	$('#status').fadeOut(5000); 
-	$('body').delay(1500).css({'overflow':'visible'});
-
-
 //MOBILE NAVIGATION
 	$(".icon").click(function () {
 	$(".mobilenav").fadeToggle(500);
@@ -77,7 +73,7 @@ $(document).ready(function() {
 
 
 //SMOOTH THESE NAV LINKS
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+   $(document).on('click', 'a[href^="#"]', function (event) {
                         anchor.addEventListener('click', function (e) {
                             e.preventDefault();
 
@@ -117,20 +113,61 @@ $(document).ready(function() {
 				window.sr = ScrollReveal();
         
         		sr.reveal('#logos .logo-single img');
-				sr.reveal('h3');
 				sr.reveal('h4');
 				sr.reveal('h5');
 				sr.reveal('#solution-icons .solution-single');
 				sr.reveal('#logorow-push .logorow_single img');
 				sr.reveal('#signup #signup-info img.abs');
 				sr.reveal('.mobile-show .lodginginfo-single');
-	     
-
+				sr.reveal('.threeup .card');
+				sr.reveal('.image-grid-3 .content');
+				sr.reveal('.image-grid-team .logo-single');
+				sr.reveal('#join');
+				sr.reveal('.featuresection');
+				sr.reveal('.featurewithtag');
+				sr.reveal('.twocol-about img');
+				sr.reveal('.twocol-section .card');
+				sr.reveal('#ceo img');
+				sr.reveal('#benefits li');
+				sr.reveal('.partner-blocks .card');
+				//sr.reveal('#accordionFaq .card');
+				sr.reveal('div#heading_hiceo');
+				sr.reveal('#headquarters .col');
+	
+	
+	
+	
+	
+// GRAVITYFORMS DATE PICKER
 
 	
+	
+	
+	
+	
+				
+	
+	
+	
+	
+	
+	
+				
+	     
+//TOGGLE STUFF
 
+	
+				$('.toggle').click(function(){
 
+							var $this = $(this).parent().find('.toggle');
+							$this.toggleClass( 'down' );
+							$(this).text(function(i, text){
+								  return text === "Read Less" ? "Read More" : "Read Less";
+							  })
 
+							var $this = $(this).parent().find('.item-content');
+							$this.slideToggle('75');
+					});
   
 //COUNTER with number formatting
 function formatNumber(num) {
@@ -213,20 +250,7 @@ if ( $( "#statistics" ).length ) {
  
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 // MARKETO FORM HOMEPAGE
 
 $('#reg-form').ready(function() { 
@@ -239,23 +263,42 @@ $('#reg-form').ready(function() {
 
     
   }
-
-  
+ 
 
 });
 
-                
-  function loadScripts(){
+
+
+  // HOMEPAGE MARKETO FORM          
+ function loadScripts(){
    
-      // config section - customize for your org
-       var config = {
+                      // config section - customize for your org
+                      var config = {
                         instanceHost: "//app-ab35.marketo.com",
                         munchkinId: "763-KXV-605",
                         formidStack: [1026, 1028],
                         onFinalSuccess: function(vals, thankYouURL) {
-                          /* whatever you want to do after the final form is submitted */
+                            
+                            /* whatever you want to do after the final form is submitted */
+                              
+
+                              $('.terms-privacy').hide();
+                              $('.main-step').hide();
+                              $('.second-step').hide();
+                              $('.final-step').show();
+
+                              $('a#final-step-got-it').click(function(){ // refresh page
+                                    location.reload();
+                                });
+
+
+                              $('.mktoForm').hide();
+
+
+                              return false;
+
                         },
-                        insertInsideSelector: "#hp-container-wrap"
+                        insertInsideSelector: "#reg-form"
                         /*insertBeforeSelector : null*/
                       }
 
@@ -272,6 +315,7 @@ $('#reg-form').ready(function() {
                           parentEl.appendChild(formEl)
                         }
                         MktoForms2.loadForm.apply(MktoForms2, Array.prototype.slice.apply(arguments, [2]));
+
                       }
 
                                             
@@ -292,7 +336,7 @@ $('#reg-form').ready(function() {
 
                       config.formidStack = config.formidStack.slice(startFormIndex);
 
-                      console.log("currently on: #"+config.formidStack);
+                      console.log("currently on: #"+config.formidStack.length);
                        
 
                       // main work
@@ -334,16 +378,14 @@ $('#reg-form').ready(function() {
 
                               form.onSuccess(config.formidStack.length ? nextForm : config.onFinalSuccess);
 
-                              
+                                console.log (config.formidStack.length);                              
 
                               if (!config.formidStack.length)
                               {
                                 console.log("last step ");
 
                                 $('.main-step').hide();
-                                $('.second-step').show();
-
-                               
+                                $('.second-step').show();                             
 
                               }
                                                       
@@ -361,6 +403,9 @@ $('#reg-form').ready(function() {
 
 
 
+
+
+                      
 
                     };
 

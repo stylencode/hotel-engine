@@ -2,9 +2,11 @@
 	<div id="footer-wrap">
 		<div class="row">
 			<div class="col-xxl-4 col-xl-3 col-lg-3 mobile-hide">
-				<p class="title">
-					Chat with Sales
-				</p>
+				<?php if(get_field('footer_contact_title', '4')) { ?>
+							<p class="title">
+								<?php the_field('footer_contact_title', '4'); ?>
+							</p>
+				<?php } ?>
 				<?php if( have_rows('phone', '4') ): while( have_rows('phone', '4')) : the_row(); ?>
 					<a href="tel:=+1-<?php the_sub_field('call_formatted_number'); ?>">
 						<span class="phone">
@@ -32,9 +34,11 @@
 			</div>
 			<div class="col-xxl-8 col-xl-9 col-lg-9">
 					<ul>
-						<p class="title">
-							Features
-						</p>
+						<?php if(get_field('footer_menu_title_1', '4')) { ?>
+							<p class="title">
+								<?php the_field('footer_menu_title_1', '4'); ?>
+							</p>
+						<?php } ?>
 						<?php wp_nav_menu( array(
                                  'theme_location' => 'footer-nav1',
                                  'container' => false,
@@ -42,9 +46,11 @@
                           ) ); ?>
 					</ul>
 				<ul>
-					<p class="title">
-						Customers
-					</p>
+					<?php if(get_field('footer_menu_title_2', '4')) { ?>
+							<p class="title">
+								<?php the_field('footer_menu_title_2', '4'); ?>
+							</p>
+						<?php } ?>
 					<?php wp_nav_menu( array(
                                  'theme_location' => 'footer-nav2',
                                  'container' => false,
@@ -52,9 +58,11 @@
                           ) ); ?>
 				</ul>
 				<ul>
-					<p class="title">
-						About Us
-					</p>
+					<?php if(get_field('footer_menu_title_3', '4')) { ?>
+							<p class="title">
+								<?php the_field('footer_menu_title_3', '4'); ?>
+							</p>
+					<?php } ?>
 					<?php wp_nav_menu( array(
                                  'theme_location' => 'footer-nav3',
                                  'container' => false,
@@ -62,9 +70,11 @@
                           ) ); ?>
 				</ul>
 				<ul>
-					<p class="title">
-						Resources
-					</p>
+					<?php if(get_field('footer_menu_title_4', '4')) { ?>
+							<p class="title">
+								<?php the_field('footer_menu_title_4', '4'); ?>
+							</p>
+					<?php } ?>
 					<?php wp_nav_menu( array(
                                  'theme_location' => 'footer-nav4',
                                  'container' => false,
@@ -73,9 +83,11 @@
 				</ul>
 			</div>
 			<div class="col-xxl-4 col-xl-3 col-lg-3 mobile-show">
-				<p class="title">
-					Contact Sales
-				</p>
+				<?php if(get_field('footer_contact_title', '4')) { ?>
+							<p class="title">
+								<?php the_field('footer_contact_title', '4'); ?>
+							</p>
+				<?php } ?>
 				<?php if( have_rows('phone', '4') ): while( have_rows('phone', '4')) : the_row(); ?>
 					<a href="tel:=+1-<?php the_sub_field('call_formatted_number'); ?>">
 						<span class="phone">

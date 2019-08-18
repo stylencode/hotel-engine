@@ -97,5 +97,9 @@
 		<?php endwhile; endif; ?>
 		</div>
 		</div>
+		<div class="row small">
+			<p>* approval required
+			</p>
+		</div>
 </section>
 

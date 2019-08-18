@@ -11,20 +11,16 @@ $afaq_subheading = get_field('afaq_subheading');
 
 <?php if ($afaq_headline) { ?>
 
-<section id="faq" class="container" style="margin-top: 80px; padding: 100px 20px;">
-
-      <div class="row text-left m-0 pt-5 pb-5">
-         	<div class="col-12">
-               
-                <h1><?php echo $afaq_headline; ?></h1>
+<section id="faq" class="container">
+      <div class="row text-left">
+         	<div class="col-10 offset-1">
+                <h1 class="h2"><?php echo $afaq_headline; ?></h1>
                 <p><?php echo $afaq_subheading; ?></p>
-       
         	</div>
        </div>
-
       <div class="row text-left m-0 pt-5 pb-5">
         
-         <div class="col-12 text-left">
+         <div class="col-10 offset-1 text-left">
                
                <div id="accordionFaq">
          		
@@ -40,7 +36,6 @@ $afaq_subheading = get_field('afaq_subheading');
          				 	$i ++;	
 
 
-
          				 	the_row(); 
 
 							?>
@@ -50,8 +45,10 @@ $afaq_subheading = get_field('afaq_subheading');
 							<div class="card">
 							    <div class="card-header" id="heading_<?php echo $i.$sfx; ?>">
 						
-							        <div class="collapsed" data-toggle="collapse" data-target="#collapse_<?php echo $i.$sfx; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $i.$sfx; ?>">
-							          <?php the_sub_field('title'); ?>
+							        <div class="collapsed" data-toggle="collapse" data-target="#collapse_<?php echo $i.$sfx; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $i.$sfx; ?>" role="button" style="cursor: pointer;">
+										<mark class="pad">
+							          		<?php the_sub_field('title'); ?>
+										</mark>
 							        </div>
 							
 							    </div>

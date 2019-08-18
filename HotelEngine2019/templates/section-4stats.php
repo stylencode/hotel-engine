@@ -3,7 +3,7 @@
 		<div class="container statistics-wrapper">
 			<div class="row justify-content-center" style="padding: 30px 30px;">
 				 <?php if(get_sub_field('title')) { ?>
-					<div class="col-10 text-center">
+					<div class="col-lg-8 col-md-10 col-10 text-center">
 							<h3><?php the_sub_field('title'); ?></h3>
 							<?php if(get_sub_field('intro')) { ?>
 								<?php the_sub_field('intro'); ?>

@@ -17,14 +17,14 @@ $as_subheading = get_field('as_subheading');
         
 
       	<!-- set up columns for repetition -->
-         <div class="col-sm-5">
+        <div class="col-md-4 col-sm-12">
                
                 <h3><?php echo $as_headline; ?></h3>
                 <p><?php echo $as_subheading; ?></p>
        
         </div>
 
-         <div class="col-sm-7 text-left">
+         <div class="col-md-7 offset-md-1 col-sm-12 text-left">
                
                <div id="accordionAccountSupport">
          		

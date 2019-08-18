@@ -10,11 +10,11 @@ $ar_subheading = get_field('ar_subheading');
 
 <section id="additionalResources" class="container">
       <div class="row text-left m-0 pt-5 pb-5">
-         <div class="col-sm-5">
+        <div class="col-md-4 col-sm-12">
                 <h3><?php echo $ar_headline; ?></h3>
                 <p><?php echo $ar_subheading; ?></p>
         </div>
-         <div class="col-sm-7 text-left">
+         <div class="col-md-7 offset-md-1 col-sm-12 text-left">
                <div id="accordionAdditionalResources">
          			<?php if( have_rows('ar_sections')) { 
          			 	$i = 0;

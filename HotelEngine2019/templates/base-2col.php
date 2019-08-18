@@ -1,13 +1,13 @@
 <?php if( get_field('block_layout') == 'icon' ): ?>
-	<section class="feature-section partner-blocks" style="padding: 150px;">
-		  <div class="row justify-content-lg-center">
+	<section class="feature-section partner-blocks container">
+		<div class="row justify-content-lg-center">
 				<div class="col-lg-11 col-md-12">
 					<?php if( have_rows('content_block')): while( have_rows('content_block')) : the_row(); ?>
 						<div class="row">
 							<div class="col-12">
 								 <div class="card-deck">
 									<?php if( have_rows('block_1')): while( have_rows('block_1')) : the_row(); ?>
-										<div class="col-lg-6 p-0 mb-5 card">
+										<div class="col-lg-6 col-10 offset-1 p-0 mb-4 card">
 												  <div class="card-body">
 													 <?php if(get_sub_field('icon')) { ?>
 													 	<img src="<?php the_sub_field('icon'); ?>" alt="<?php the_sub_field('title'); ?>">
@@ -25,7 +25,7 @@
 										</div>
 									<?php endwhile; endif; ?>
 									<?php if( have_rows('block_2')): while( have_rows('block_2')) : the_row(); ?>
-										<div class="col-lg-6 p-0 mb-5 card">
+										<div class="col-lg-6 col-10 offset-1 p-0 mb-4 card">
 												  <div class="card-body">
 													 <?php if(get_sub_field('icon')) { ?>
 													 	<img src="<?php the_sub_field('icon'); ?>" alt="<?php the_sub_field('title'); ?>">
@@ -43,16 +43,16 @@
 										</div>
 									<?php endwhile; endif; ?>
 								</div>
-							</div>	 
+							</div>
 						</div>
-					<?php endwhile; endif; ?>
-				</div>
+				<?php endwhile; endif; ?>
 			</div>
+	</div>
 	</section>
 <?php endif; ?>
 
 <?php if( get_field('block_layout') == 'imgbottom' ): ?>
-	<section class="2col-section container" style="padding: 50px 0;">
+	<section class="twocol-section container">
 		  <div class="row justify-content-lg-center">
 				<div class="col-lg-11 col-md-12">
 					<?php if( have_rows('content_block')): while( have_rows('content_block')) : the_row(); ?>

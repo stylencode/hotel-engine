@@ -72,7 +72,7 @@ function load_view($layout){
 
 				                <div class="col-md-6 <?php if($featurette_alignment == 'right') { echo "order-md-2"; }?>">
 					                  <!-- vertical align containers -->
-									  								              
+									  			<div class="col-lg-9 offset-lg-1">					              
 									              <?php if ($featurette_topic) { ?><h5 class="text-<?php echo $featurette_text_position; ?>"><?php echo $featurette_topic; ?></h5><?php } ?>
 
 									              
@@ -89,9 +89,8 @@ function load_view($layout){
 														<a class="btn" <?php if(get_sub_field('button_page_link')) { ?> href="<?php the_sub_field('button_page_link'); ?>" <?php }else { ?> href="<?php the_sub_field('external_link'); ?>" target="_blank"<?php } ?>>
 															<?php the_sub_field('button_text'); ?>
 														</a>
-												<?php endwhile; endif; ?>
-
-
+													<?php endwhile; endif; ?>
+												</div>
 				                </div>
 
 				                <div class="col-md-6 <?php if($featurette_alignment == 'right') { echo "order-md-1"; }?>">
@@ -157,7 +156,7 @@ function load_view($layout){
 		<?php if($layout == '3') { ?>
 		<!-- full bkg image text column -->
 
-				<div class="row m-0 flex-row d-flex align-items-center" style="background-image: url('<?php the_sub_field('featurette_image'); ?>'); background-size: cover; background-position: center; min-height: <?php echo $featurette_height; ?>">
+				<div class="row m-0 flex-row d-flex align-items-center" style="background-image: url('<?php if ( wp_is_mobile() ) { ?><?php if(get_sub_field('tablet_down_image')) { ?><?php the_sub_field('tablet_down_image'); ?><?php } ?><? } else { ?><?php the_sub_field('featurette_image'); ?><?php } ?>'); background-size: cover; background-position: center; min-height: <?php echo $featurette_height; ?>">
 
 				                <div class="col-md-6 <?php if($featurette_alignment == 'right') { echo "offset-md-6"; }?> p-5">
 

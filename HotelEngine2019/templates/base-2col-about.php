@@ -1,16 +1,18 @@
 <?php if( have_rows('2_col_about') ): while( have_rows('2_col_about')) : the_row(); ?>	
-	<section class="2col-about container">
+	<section class="twocol-about container">
 		  <div class="row text-left m-0 pt-5 pb-5">
 			<!-- set up columns for repetition -->
-			 <div class="col-sm-6" style="padding: 150px 20px;" >
-				 <?php if(get_sub_field('title')) { ?>
-					<h3 style="color: #333;"><?php the_sub_field('title'); ?></h2>
-				 <?php } ?>
-				 <?php if(get_sub_field('content')) { ?>
-					<?php the_sub_field('content'); ?>
-				 <?php } ?>
+			 <div class="col-md col-sm-12 my-auto">
+				 <div class="col-lg-9 col-md-12">
+					 <?php if(get_sub_field('title')) { ?>
+						<h3><?php the_sub_field('title'); ?></h2>
+					 <?php } ?>
+					 <?php if(get_sub_field('content')) { ?>
+						<?php the_sub_field('content'); ?>
+					 <?php } ?>
+				  </div>
 			</div>
-			 <div class="col-sm-6 p-3 text-center">
+			 <div class="col-md col-sm-12 p-3 text-center">
 				 <?php if(get_sub_field('featured_image')) { ?>
 					<img class="img-fluid" src="<?php the_sub_field('featured_image'); ?>" alt="<?php the_sub_field('title'); ?>">
 				 <?php } ?>

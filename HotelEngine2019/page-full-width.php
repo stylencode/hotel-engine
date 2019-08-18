@@ -8,16 +8,16 @@
 	
 
 
-		<section class="container" style="margin-top: 80px; padding: 100px 20px;">
+		<section class="container" style="margin-top: 130px;">
 
 
 		    <!-- vertical align containers -->
 		    <div class="row">
 
-		          <div class="col-12">
+		          <div class="col-sm-10 offset-sm-1 col-12">
 
 		              
-		              	<h1 class="entry-title"><?php the_title(); ?></h1> <!-- Page Title -->
+		              	<h1 class="entry-title h2"><?php the_title(); ?></h1> <!-- Page Title -->
 
 
 						<?php while ( have_posts() ) : the_post(); ?> 

@@ -33,9 +33,9 @@ $height = get_field('hero_height');
 
       <div class="row text-left m-0" style="background-image: url('https://hotelengine.mystagingwebsite.com/wp-content/uploads/2019/07/signup-filler.png'); background-position: center;background-size: contain; background-repeat: repeat-x; padding: 40px;">
 
-
+		<div class="heronavcontainer">
       	<?php if(get_field('acc_headline')) {   ?>         
-	         <div id="createAccountBtn" class="col-4 text-center">
+	         <div id="createAccountBtn" class="text-center">
 				 <div class="tab-nav-wrap">
 				  <?php if(get_field('tab_icon')) { ?>
 	              	<img src="<?php the_field('tab_icon'); ?>" width="60" alt="<?php the_field('tab_title'); ?>" />  
@@ -46,7 +46,7 @@ $height = get_field('hero_height');
 		<?php } ?>
 		  
 		<?php if(get_field('as_headline')) { ?>
-	        <div id="accountSupportBtn" class="col-4 text-center">
+	        <div id="accountSupportBtn" class="text-center">
 				  <div class="tab-nav-wrap">
 					<?php if(get_field('tab_2_image')) { ?>
 	              	<img src="<?php the_field('tab_2_image'); ?>" width="60" alt="<?php the_field('tab_2_title'); ?>" />  
@@ -57,7 +57,7 @@ $height = get_field('hero_height');
 		<?php } ?>
 		
 		<?php if(get_field('abe_headline')) { ?>
-	        <div id="bookExtraBtn" class="col-4 text-center">
+	        <div id="bookExtraBtn" class="text-center">
 	            <div class="tab-nav-wrap">  
 				<?php if(get_field('tab_3_image')) { ?>
 	              	<img src="<?php the_field('tab_3_image'); ?>" width="60" alt="<?php the_field('tab_3_title'); ?>" />  
@@ -66,6 +66,7 @@ $height = get_field('hero_height');
 				</div>
 	        </div>
 		 <?php } ?>
+		</div>  
       </div>
 </section>
 <?php } ?>
@@ -77,24 +78,57 @@ $height = get_field('hero_height');
     //$( "  " ).text( "The DOM is now loaded and can be manipulated." );
     $( "#createAccountBtn" ).click(function() {
 	  //alert( "show createAccount" );
+		
 		hideAll();
 
 		$(this).addClass("active");
-		$( "#createAccount" ).show();	
+		$( "#createAccount" ).show();
+
+		// find anchor position
+		$anchor = $( "#createAccount" ).position();
+		$anchor1 = $anchor.top - 120; // adjust for the header
+
+		//console.log($anchor1);
+
+		window.scrollTo(0,$anchor1);
+
 	});
     $( "#accountSupportBtn" ).click(function() {
 	  //alert( "show accountSupport" );
+		
 		hideAll();
 
 		$(this).addClass("active");
 		$( "#accountSupport" ).show();	
+
+		// find anchor position
+		$anchor = $( "#accountSupport" ).position();
+		$anchor1 = $anchor.top - 120; // adjust for the header
+
+		//console.log($anchor1);
+
+		window.scrollTo(0,$anchor1);
+
+
+
 	});
 	$( "#bookExtraBtn" ).click(function() {
 	  //alert( "show Booking for 9 form" );
+		
 		hideAll();
 
 		$(this).addClass("active");
 		$( "#bookExtra" ).show();	
+
+		// find anchor position
+		$anchor = $( "#bookExtra" ).position();
+		$anchor1 = $anchor.top - 120; // adjust for the header
+
+		//console.log($anchor1);
+
+		window.scrollTo(0,$anchor1);
+
+
 	});
 	
 	function hideAll()

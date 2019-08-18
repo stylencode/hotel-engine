@@ -93,14 +93,16 @@
 	wp_head();
 ?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-
+<?php the_field('script_embeds', '4'); ?>
+	
 </head>
 <body <?php body_class(); ?>>
+<?php the_field('body_script_embeds', '4'); ?>
 <?php if(is_front_page()) { ?>
-	<!-- Intercom -->
+	<!-- Intercom 
 	<a class="intercom mobile-hide" href="#">
 		<img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-intercom.svg" alt="Intercom" />
-	</a>
+	</a>-->
 	<!-- PreLoader 
 	<div id="preloader">
 	  <div id="status">

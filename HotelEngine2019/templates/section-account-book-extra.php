@@ -24,7 +24,7 @@ $abe_form = get_field('abe_form');
         
 
         <!-- set up columns for repetition -->
-         <div class="col-sm-5">
+         <div class="col-md-4 col-sm-12">
                
                 <h3><?php echo $abe_headline; ?></h3>
                 <p><?php echo $abe_subheading; ?></p>
@@ -32,7 +32,7 @@ $abe_form = get_field('abe_form');
       
         </div>
 
-         <div class="col-sm-7 p-3 text-center">             
+         <div class="col-md-7 offset-md-1 col-sm-12 p-3 text-center">             
             
             <?php echo $abe_form; ?>
 

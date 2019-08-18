@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row justify-content-center">
 			<div class="col-12 text-center">
-				<h2><?php the_field('awards_headline'); ?></h2>
+				<h3><?php the_field('awards_headline'); ?></h3>
 			</div>
 
 		</div>
